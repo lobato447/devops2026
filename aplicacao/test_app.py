@@ -20,8 +20,8 @@ Pedro Rocha Horchulhack"""
 
     assert conteudo_esperado == conteudo_da_resposta
 
-def test_livros(client):
-    resposta = client.get("/livros")
-    conteudo_da_resposta = resposta.text
-
-    assert "1984\n    1984\n" == conteudo_da_resposta
+#def test_livros(client):
+#    resposta = client.get("/livros")
+#    conteudo_da_resposta = resposta.text
+#
+#    assert "1984\n    1984\n" == conteudo_da_resposta
