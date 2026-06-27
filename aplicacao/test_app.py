@@ -1,9 +1,6 @@
 import pytest
 from app import APP
 
-import pytest
-from app import APP
-
 @pytest.fixture()
 def client():
     app = APP
@@ -17,5 +14,14 @@ def test_index(client):
     resposta = client.get("/")
     conteudo_da_resposta = resposta.text
 
-    assert """<h1>Mauricio Lobato</h1>
-<h1>Mauricio Lobato</h1>""" == conteudo_da_resposta
+    conteudo_esperado = """<h1>Integrantes</h1>
+<br>
+Pedro Rocha Horchulhack"""
+
+    assert conteudo_esperado == conteudo_da_resposta
+
+def test_livros(client):
+    resposta = client.get("/livros")
+    conteudo_da_resposta = resposta.text
+
+    assert "" == conteudo_da_resposta
