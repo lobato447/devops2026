@@ -24,4 +24,4 @@ def test_livros(client):
     resposta = client.get("/livros")
     conteudo_da_resposta = resposta.text
 
-    assert "" == conteudo_da_resposta
+    assert "1984\n    1984\n" == conteudo_da_resposta
