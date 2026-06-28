@@ -1,3 +1,16 @@
-{% for livro in livros %}
-    {{ livro.titulo }}
-{% endfor %}
+<h1>Livros</h1>
+{% if livros %}
+    <ul>
+        {% for livro in livros %}
+            <li>
+                <div><strong>Título:</strong> {{ livro.titulo }}</div>
+                <div><strong>Autor:</strong> {{ livro.autor }}</div>
+                <div><strong>ISSN:</strong> {{ livro.issn or 'Não informado' }}</div>
+                <div><strong>Data de Publicação:</strong> {{ livro.data_publicacao.strftime('%Y-%m-%d') if livro.data_publicacao else 'Não informado' }}</div>
+                <div><strong>Quantidade de Páginas:</strong> {{ livro.qtde_paginas if livro.qtde_paginas is not none else 'Não informado' }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum livro cadastrado.</p>
+{% endif %}
