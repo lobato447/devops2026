@@ -31,7 +31,7 @@ migrate = Migrate(APP, BD)
 def index():
     return render_template('index.html')
 
-@APP.route("/livros", methods=['GET', 'POST'])
+@APP.route("/livros", methods=['GET'])
 def livros():
     livro = Livro(
         titulo="1984",

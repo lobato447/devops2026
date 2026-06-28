@@ -15,11 +15,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Instalação de dependências
         run: pip install -r requirements.txt
-      # - name: Migração
-      #   run: |
-      #     flask db init
-      #     flask db migrate -m "First"
-      #     flask db upgrade
       - name: Testes unitários
         run: pytest aplicacao/
   entrega-continua:
@@ -42,4 +37,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ vars.DOCKER_USER }}/mlobato:27-06-26
+          tags: ${{ vars.DOCKER_USER }}/mauriciolobatomoraes:27-06-26
